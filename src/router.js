@@ -78,6 +78,12 @@ var PremiumRouter = BaseRouter.extend({
     if (this._transitioningTo !== newRoute) { return; }
 
     this.currentRoute = newRoute;
+
+    // Call the show method if it's defined.
+    if (this.currentRoute.show) {
+        this.currentRoute.show(fetchData);
+    }
+
     this.currentRoute.trigger('enter', routeData, fetchData);
 
     // We can now delete the internal reference to this transition,

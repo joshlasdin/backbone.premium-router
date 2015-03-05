@@ -15,6 +15,9 @@ _.extend(Route.prototype, {
   // be asynchronous.
   fetch() {},
 
+  // Function to get called once fetch() resolves.
+  show() {},
+
   navigate(url, options) {
     this._router.navigate(url, options);
     return this;
