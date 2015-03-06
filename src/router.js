@@ -88,7 +88,7 @@ var PremiumRouter = BaseRouter.extend({
     this.currentRoute.trigger('enter', routeData, fetchData);
 
     // Trigger "navigate" on the router
-    this.currentRoute.trigger('navigate', routeData);
+    this.trigger('navigate', routeData);
 
     // We can now delete the internal reference to this transition,
     // if we still have it, as the transition is complete.
